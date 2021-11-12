@@ -1,6 +1,6 @@
-# axsis
+# AXSIS-XES
 
-This is a meta project that links all the repositories related to axsis slow control system
+This is a meta project that links all the repositories related to the axsis xes slow control system
 
 | Purpose | Platform | Link |
 |---------|----|------|
