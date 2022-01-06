@@ -57,7 +57,7 @@ First launch Magix; then both backend applications and, finally, the frontend. O
 
 ![](assets/images/Screenshot_20220106_154315.png)
 
-In `simulation` mode any IP will pass.
+In the `simulation` mode any IP will pass.
 
 # Publications 
 
