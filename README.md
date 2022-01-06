@@ -23,9 +23,19 @@ One will need PyCharm Professional and a Python environment (3.6+) installed on 
 
 `main.py` -- REST API. This is a Flask application and requires corresponding dependencies, run `pip install -r Requirements.txt` to install them. Configure PyCharm accordinly: [tutorial](https://www.jetbrains.com/help/pycharm/creating-flask-project.html)
 
+This is how `Run configuration...` may look like:
 
+![](assets/images/Screenshot_20220106_144331.png)
 
-`axsis.magix.py` -- Magix client
+`axsis.magix.py` -- Magix client. This is just a runnable Python script: [tutorial](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html#run)
+
+> NOTE: Both applications require enironmental variable `MODE` to be set to either `simulation|production`. In case of `production` a gateway to the underlying hardware will be created.
+
+## Middleware 
+
+Middleware is a Magix component that supports http/sse transports. Currently Java version is used. Java Magix is a standard Java JAX-RS web application deployed to Tomcat. To setup it one will need IntelliJ IDEA Ultimate + Tomcat server: [tutorial](https://www.jetbrains.com/help/idea/run-debug-configuration-tomcat-server.html) 
+
+Here is how `Run configuration...` setup screen may look like:
 
 
 
