@@ -33,12 +33,18 @@ This is how `Run configuration...` may look like:
 
 ## Middleware 
 
-Middleware is a Magix component that supports http/sse transports. Currently Java version is used. Java Magix is a standard Java JAX-RS web application deployed to Tomcat. To setup it one will need IntelliJ IDEA Ultimate + Tomcat server: [tutorial](https://www.jetbrains.com/help/idea/run-debug-configuration-tomcat-server.html) 
+Middleware is a Magix component that supports http/sse transports. Currently Java 11+ version is used. Java Magix is a standard Java JAX-RS web application deployed to Tomcat. To setup it one will need IntelliJ IDEA Ultimate + Tomcat 9.x server: [tutorial](https://www.jetbrains.com/help/idea/run-debug-configuration-tomcat-server.html) 
 
 Here is how `Run configuration...` setup screen may look like:
 
+![](assets/images/Screenshot_20220106_150940.png)
 
+> Please note default http port: 8080. Other components expect Magix to be on `localhost:8080`
 
-# Publications
+## Frontend
+
+Frontend is a NodeJS application hence requires WebStorm and a Node 12+ environment, `nvm` is advised (serves same purpose as `Conda` for Python). To start application execute `npm install && npm run start` this will launch the web server on `localhost:8081`, provided that middleware is already running.
+
+# Publications 
 
 [1] [Mazalova, V.; Khokhriakov, I.; Merkulova, O.; Nozik, A. A Novel Solution for Controlling Hardware Components of Accelerators and Beamlines. Preprints 2021, 2021080336 (doi: 10.20944/preprints202108.0336.v1).](https://www.preprints.org/manuscript/202108.0336/v1)
