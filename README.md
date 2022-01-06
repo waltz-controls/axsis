@@ -41,6 +41,8 @@ Here is how `Run configuration...` setup screen may look like:
 
 ![](assets/images/Screenshot_20220106_150940.png)
 
+Once is launched one can debug/monitor Magix messages flow by simply navigating Chrome browser to `localhost:8080/magix/api/subscribe`
+
 > Please note default http port: 8080. Other components expect Magix to be on `localhost:8080`
 
 ## Frontend
@@ -53,7 +55,9 @@ Configuring NodeJS run/debug in WebStorm [tutorial](https://www.jetbrains.com/he
 
 First launch Magix; then both backend applications and, finally, the frontend. Once everything is up and running navigate your browser to `localhost:8081` one should see the following page:
 
+![](assets/images/Screenshot_20220106_154315.png)
 
+In `simulation` mode any IP will pass.
 
 # Publications 
 
