@@ -27,6 +27,8 @@ This is how `Run configuration...` may look like:
 
 ![](assets/images/Screenshot_20220106_144331.png)
 
+The application will start on `localhost:5000`
+
 `axsis.magix.py` -- Magix client. This is just a runnable Python script: [tutorial](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html#run)
 
 > NOTE: Both applications require enironmental variable `MODE` to be set to either `simulation|production`. In case of `production` a gateway to the underlying hardware will be created.
@@ -43,7 +45,15 @@ Here is how `Run configuration...` setup screen may look like:
 
 ## Frontend
 
-Frontend is a NodeJS application hence requires WebStorm and a Node 12+ environment, `nvm` is advised (serves same purpose as `Conda` for Python). To start application execute `npm install && npm run start` this will launch the web server on `localhost:8081`, provided that middleware is already running.
+Frontend is a NodeJS application hence requires WebStorm and a Node 12+ environment, `nvm` is advised (serves same purpose as `Conda` for Python). To start application execute `npm install && npm run start` this will launch the web server on `localhost:8081`, provided that middleware is already running. 
+
+Configuring NodeJS run/debug in WebStorm [tutorial](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html)
+
+## Run everything
+
+First launch Magix; then both backend applications and, finally, the frontend. Once everything is up and running navigate your browser to `localhost:8081` one should see the following page:
+
+
 
 # Publications 
 
