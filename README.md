@@ -41,6 +41,10 @@ Here is how `Run configuration...` setup screen may look like:
 
 ![](assets/images/Screenshot_20220106_150940.png)
 
+On the Deployment tab make sure that `magix:war exploded` artifact is deployed and the Application context is `magix`:
+
+![](assets/images/Screenshot_20220218_165041.png)
+
 Once is launched one can debug/monitor Magix messages flow by simply navigating Chrome browser to `localhost:8080/magix/api/subscribe`
 
 > Please note default http port: 8080. Other components expect Magix to be on `localhost:8080`
