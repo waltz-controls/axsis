@@ -1,0 +1,40 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: axsis
+build:
+  artifacts:
+  - image: ingvord/axsis
+    context: axsis-xes
+    docker:
+      dockerfile: docker/flask/Dockerfile
+  - image: ingvord/axsis-magix
+    context: axsis-xes
+    docker:
+      dockerfile: docker/magix/Dockerfile
+  - image: ingvord/axsis-gui
+    context: axsis-xes-gui
+    docker:
+      dockerfile: Dockerfile
+      buildArgs:
+        NODE_AUTH_TOKEN: "{{ .NODE_AUTH_TOKEN}}"
+#  - image: ingvord/axsis-virtual-tango-host
+#    context: axsis-virtual-tango-host
+#    docker:
+#      dockerfile: Dockerfile
+  - image: ingvord/magix
+    context: magix-war-plugin
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - axsis-kube/axsis.magix.yaml
+    - axsis-kube/axsis.service.yaml
+    - axsis-kube/axsis.yaml
+    - axsis-kube/ingress.yml
+    - axsis-kube/magix.service.yaml
+    - axsis-kube/magix.yaml
+#    - axsis-kube/pi-controller.external.yaml
+    - axsis-kube/web.service.yaml
+    - axsis-kube/web.yaml
