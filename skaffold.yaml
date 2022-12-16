@@ -3,6 +3,8 @@ kind: Config
 metadata:
   name: axsis
 build:
+  local:
+    push: true
   artifacts:
   - image: ingvord/axsis
     context: axsis-xes
@@ -24,17 +26,24 @@ build:
 #      dockerfile: Dockerfile
   - image: ingvord/magix
     context: magix-war-plugin
-    docker:
-      dockerfile: Dockerfile
+    jib: 
+      project: com.github.waltz-controls:magix
+  - image: ingvord/axsis-tango-server
+    context: axsis-tango-server
+    jib:
+      project: com.github.ingvord.axsis:AxsisTangoServer
 deploy:
+  kubeContext: "microk8s"
   kubectl:
     manifests:
+    - axsis-kube/magix.service.yaml
+    - axsis-kube/magix.yaml
     - axsis-kube/axsis.magix.yaml
     - axsis-kube/axsis.service.yaml
     - axsis-kube/axsis.yaml
     - axsis-kube/ingress.yml
-    - axsis-kube/magix.service.yaml
-    - axsis-kube/magix.yaml
 #    - axsis-kube/pi-controller.external.yaml
     - axsis-kube/web.service.yaml
     - axsis-kube/web.yaml
+    - axsis-kube/tango-host.yaml
+    - axsis-kube/tango-server.yaml
